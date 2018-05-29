@@ -13,30 +13,30 @@
         }
 
         public function getId(){
-            return $this->$id_funcionario;
+            return $this->id_funcionario;
         }
         public function setId($id){
-            $this->$id_funcionario = $id;
+            $this->id_funcionario = $id;
         }
 
         public function getNome(){
-            return $this->$nome_funcionario;
+            return $this->nome_funcionario;
         }
         public function setNome($nome){
-            $this->$nome_funcionario = $nome;
+            $this->nome_funcionario = $nome;
         }
 
         public function getEmail(){
-            return $this->$email_funcionario;
+            return $this->email_funcionario;
         }
         public function setEmail($email){
-            $this->$email_funcionario = $email;
+            $this->email_funcionario = $email;
         }
         public function getCargo(){
-            return $this->$cargo_funcionario;
+            return $this->cargo_funcionario;
         }
         public function setCargo($cargo){
-            $this->$cargo_funcionario = $cargo;
+            $this->cargo_funcionario = $cargo;
         }
     }
     

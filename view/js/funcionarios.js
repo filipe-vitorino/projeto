@@ -1,5 +1,6 @@
 $(document).ready(function(){ 
     $('#btn_salvar').click(function( event ) {
+        
         event.preventDefault();
        // $('#formulario_funcionario').submit();
         inserir_funcionario();
@@ -15,6 +16,7 @@ function inserir_funcionario(){
     }).then(sucesso, falha);   
 
     function sucesso(resultado){
+        alert("AA");
         alert(resultado);
         console.log(resultado);
     } 
