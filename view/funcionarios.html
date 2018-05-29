@@ -11,44 +11,95 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="container mt-5 my-2 text-right">
+      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalCenter">
+          Novo <i class="fas fa-user-plus"></i></button> 
+    </div>
     <div class="container">
-      <div class="my-3 text-right">
-        <a href="#" class="btn btn-primary btn-success"> Novo <i class="fas fa-user-plus"></i></a>
-      </div>
-
-      <table class="table table-hover">
+          <table class="table table-hover ">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th style="width: 5%">#</th>
+              <th style="width: 34%">Nome</th>
+              <th style="width: 30%">E-mail</th>
+              <th style="width: 20%">Cargo</th>
+              <th style="width: 11%"></th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+              <tr>
+                  <th>3</th>
+                  <td>Larry the Bird</td>
+                  <td></td>
+                  <td>@twitter</td>
+                  <td> 
+                      <div class="my-0">
+                        <button type="button" class="btn btn-sm my-0 btn-outline-warning btn-rounded"><i class="fas fa-user-edit"></i></button>
+                        <button type="button" class="btn btn-sm my-0 btn-outline-danger btn-rounded"><i class="fas fa-user-minus"></i></button>
+                      </div>
+                    </td>                        
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td>Larry the Bird</td>
+                    <td></td>
+                    <td>@twitter</td>
+                    <td> 
+                      <div class="my-0">
+                          <button type="button" class="btn btn-sm my-0 btn-outline-warning btn-rounded"><i class="fas fa-user-edit"></i></button>
+                          <button type="button" class="btn btn-sm my-0 btn-outline-danger btn-rounded"><i class="fas fa-user-minus"></i></button>
+                      </div>                
+                  </tr>
           </tbody>
         </table>
+    </div>
+
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal">
+                  <fieldset>
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="nome_funcionario">Nome</label>  
+                    <div class="col-md-12">
+                      <input id="nome_funcionario" name="nome_funcionario" type="text" placeholder="Nome Completo" class="form-control" required="">
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="email_funcionario">E-mail</label>  
+                    <div class="col-md-12">
+                      <input id="email_funcionario" name="email_funcionario" type="email" placeholder="exemplo@exemplo" class="form-control" required="">
+                    </div>
+                  </div>
+                  <!-- Select Basic -->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="cargo_funcionario">Cargo</label>
+                    <div class="col-md-12">
+                      <select id="cargo_funcionario" name="cargo_funcionario" class="form-control">
+                        <option value="1">Funcionário</option>
+                        <option value="2">Gerente</option>
+                        <option value="3">Diretor</option>
+                      </select>
+                    </div>
+                  </div>  
+                </fieldset>
+              </form>        
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
       </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
