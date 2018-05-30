@@ -16,7 +16,6 @@ function inserir_funcionario(){
     }).then(sucesso, falha);   
 
     function sucesso(resultado){
-        alert("AA");
         alert(resultado);
         console.log(resultado);
     } 

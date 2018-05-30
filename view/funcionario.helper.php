@@ -25,12 +25,10 @@
         $nome = $_POST['nome_funcionario'];
         $email = $_POST['email_funcionario'];
         $cargo = $_POST['cargo_funcionario'];
-        //echo "ABV";
         $funcionario = new Funcionario($nome,$email,$cargo);
         $funcionarioController = new FuncionarioController();
-        $funcionarioController->salvar($funcionario);
-
-         
+        $resultado = $funcionarioController->salvar($funcionario);
+        echo json_encode($resultado);
     }
 
 
