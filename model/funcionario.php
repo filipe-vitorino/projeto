@@ -11,6 +11,10 @@
             $this->email_funcionario = $email;
             $this->cargo_funcionario = $cargo;
         }
+        public function jsonSerialize(){
+            $vars = get_object_vars($this);
+            return $vars;
+        }
 
         public function getId(){
             return $this->id_funcionario;

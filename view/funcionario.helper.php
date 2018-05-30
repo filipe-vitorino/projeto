@@ -9,8 +9,8 @@
                 inserir();
                 break;
     
-            case 'buscar':
-                pegar();
+            case 'listar':
+                listar();
                 break;
     
             case 'excluir':
@@ -30,7 +30,24 @@
         $resultado = $funcionarioController->salvar($funcionario);
         echo json_encode($resultado);
     }
-
+    function listar(){
+        $cont = 1;
+        $teste = "[";
+        $aux="";
+        $funcionarioController = new FuncionarioController();
+        $resultado = $funcionarioController->listar();
+        foreach ($resultado as $objeto) {
+            $aux = $objeto->jsonSerialize();
+            if($cont){
+                $teste .=json_encode($aux);
+                $cont = 0;       
+            }else{
+                $teste .=",".json_encode($aux);
+            }
+        }
+        $teste .= "]";
+        echo $teste;
+    }
 
 
 

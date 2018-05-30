@@ -1,6 +1,8 @@
 <?php
     require_once('ACrudDAO.php');
+    require_once('../model/funcionario.php');
     class FuncionarioDAO extends ACrudDAO{
+        
         function salvar($funcionario){
 			$situacao['resposta'] = TRUE;
 			try{
@@ -32,7 +34,28 @@
         }
         
         function excluir($objeto){}
-		function listar(){}
+		function listar(){
+            $funcionarios = array();
+			try{
+				$this->conectar();
+				$query = "SELECT * FROM tb_funcionario";
+				$resultado = $this->conexao->query($query);
+				$this->desconectar();
+				while($registro = mysqli_fetch_assoc($resultado)) {
+					$nome = $registro['nome_funcionario'];
+					$email = $registro['email_funcionario'];
+                    $cargo = $registro['cargo_funcionario'];
+                    $funcionario = new Funcionario($nome,$email,$cargo);
+                    $funcionario->setId($registro['id_funcionario']);
+                    $funcionarios[] = $funcionario;
+				}
+				$resultado->close();
+			}catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+            }
+            //print_r($funcionarios);
+			return $funcionarios;
+        }
 		function buscarPorId($codigo){}
     }
     
