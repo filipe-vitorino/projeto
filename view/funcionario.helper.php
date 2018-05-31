@@ -16,16 +16,22 @@
             case 'excluir':
                 excluir();
                 break;
-    
+            case 'busca_id':
+                busca_id();
+                break;
             default:
         }
     }  
     
     function inserir(){
+        $id_funcionario = $_POST['id_funcionario'];
         $nome = $_POST['nome_funcionario'];
         $email = $_POST['email_funcionario'];
         $cargo = $_POST['cargo_funcionario'];
         $funcionario = new Funcionario($nome,$email,$cargo);
+        if($id_funcionario != 0){
+            $funcionario->setId($id_funcionario);
+        }
         $funcionarioController = new FuncionarioController();
         $resultado = $funcionarioController->salvar($funcionario);
         echo json_encode($resultado);
@@ -48,7 +54,22 @@
         $teste .= "]";
         echo $teste;
     }
+    function excluir(){
+        $id_funcionario = $_POST['id_funcionario'];
+        //$funcionario = new Funcionario($nome,$email,$cargo);
+        $funcionarioController = new FuncionarioController();
+        $resultado = $funcionarioController->excluir($id_funcionario);
+        echo json_encode($resultado);
+    }
 
+    function busca_id(){
+        $id_funcionario = $_POST['id_funcionario'];
+        //$funcionario = new Funcionario($nome,$email,$cargo);
+        $funcionarioController = new FuncionarioController();
+        $resultado = $funcionarioController->busca_id($id_funcionario);
+        $saida  = $resultado->jsonSerialize();
+        echo json_encode($saida);
+    }
 
 
 

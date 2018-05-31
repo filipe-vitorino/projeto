@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="container mt-5 my-2 text-right">
-      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalCenter">
+      <button id="btn-novo" type="button" class="btn btn-outline-success">
           Novo <i class="fas fa-user-plus"></i></button> 
     </div>
     <div class="container">
@@ -69,6 +69,7 @@
                   <div class="form-group">
                     <label class="col-md-4 control-label" for="nome_funcionario">Nome</label>  
                     <div class="col-md-12">
+                      <input id="id_funcionario" name="id_funcionario" type="hidden">
                       <input id="nome_funcionario" name="nome_funcionario" type="text" placeholder="Nome Completo" class="form-control" required="">
                     </div>
                   </div>

@@ -11,4 +11,13 @@
             $funcionarioDAO =  new FuncionarioDAO();
             return $funcionarioDAO->listar();
         }
-}
+        public function excluir($id_funcionario){
+            $funcionarioDAO =  new FuncionarioDAO();
+            return $funcionarioDAO->excluir($id_funcionario);
+        }
+        public function busca_id($id_funcionario){
+            $funcionarioDAO =  new FuncionarioDAO();
+            return $funcionarioDAO->busca_id($id_funcionario);
+        }
+
+    }

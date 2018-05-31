@@ -16,7 +16,7 @@ require_once 'BancoDados.php';
 		abstract function salvar($objeto);
 		abstract function excluir($objeto);
 		abstract function listar();
-		abstract function buscarPorId($codigo);
+		abstract function busca_id($codigo);
 	}
 
 ?>
